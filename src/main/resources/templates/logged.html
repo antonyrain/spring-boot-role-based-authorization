@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Spring Security Wellcome </title>
+    </head>
+    <body>
+        <h1>You are logged in!</h1>
+        <h2>Try one of the next pages:</h2>
+        <div class="list-pages">
+            <p>_____</p>
+            <ul>
+                <div>Only the guest with the USER ROLE is allowed to visit:</div>
+                <li><a href="http://localhost:8080/user">USER PAGE</a></li>
+                <div>Only the guest with the MODERATOR ROLE is allowed to visit:</div>
+                <li><a href="http://localhost:8080/moderator">MODERATOR PAGE</a></li>
+                <div>Only the guest with the ADMIN ROLE is allowed to visit:</div>
+                <li><a href="http://localhost:8080/admin">ADMIN PAGE </a></li>
+            </ul>
+        </div>
+    </body>
+</html>
