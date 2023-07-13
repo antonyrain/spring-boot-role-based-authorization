@@ -12,7 +12,7 @@
 	<artifactId>springauth</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springauth</name>
-	<description>Spring Boot, Spring Security, JWT Authentication, Authorization, JPA, MySQL</description>
+	<description>Spring Boot, Spring Security, Authentication, Authorization, JPA, MySQL</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
