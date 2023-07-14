@@ -9,7 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.antonyrain.springauth.domain.User;
+import com.antonyrain.springauth.model.User;
 
 public class UserDetailsImpl implements UserDetails {
 
@@ -26,7 +26,8 @@ public class UserDetailsImpl implements UserDetails {
     String username, 
     String email, 
     String password,
-    Collection<? extends GrantedAuthority> authorities) 
+    Collection<? extends GrantedAuthority> authorities
+  ) 
   {
     this.id = id;
     this.username = username;
@@ -43,11 +44,12 @@ public class UserDetailsImpl implements UserDetails {
       .collect(Collectors.toList());
 
     return new UserDetailsImpl(
-        user.getId(), 
-        user.getUsername(), 
-        user.getEmail(),
-        user.getPassword(), 
-        authorities);
+      user.getId(), 
+      user.getUsername(), 
+      user.getEmail(),
+      user.getPassword(), 
+      authorities
+    );
   }
 
   @Override

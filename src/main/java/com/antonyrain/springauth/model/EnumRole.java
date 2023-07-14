@@ -1,4 +1,4 @@
-package com.antonyrain.springauth.domain;
+package com.antonyrain.springauth.model;
 
 public enum EnumRole {
   ROLE_USER,

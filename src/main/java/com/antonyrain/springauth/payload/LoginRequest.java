@@ -1,4 +1,4 @@
-package com.antonyrain.springauth.domain;
+package com.antonyrain.springauth.payload;
 
 public class LoginRequest {
 

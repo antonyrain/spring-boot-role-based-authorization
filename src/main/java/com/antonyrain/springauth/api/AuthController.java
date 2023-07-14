@@ -1,13 +1,9 @@
 package com.antonyrain.springauth.api;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-// import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.antonyrain.springauth.domain.LoginRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -16,7 +12,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+import com.antonyrain.springauth.payload.LoginRequest;
+
 @Controller
 @RequestMapping("/")
 public class AuthController {
@@ -24,7 +21,7 @@ public class AuthController {
     @Autowired
     AuthenticationManager authenticationManager;
 
-     @GetMapping("logged")
+    @GetMapping("logged")
     public String logged() {
         return "logged";
     }
@@ -40,7 +37,6 @@ public class AuthController {
     }
 
     @PostMapping("login")
-    // public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest) {
     public String authenticateUser(@RequestBody LoginRequest loginRequest) {
 
         Authentication authentication = authenticationManager.authenticate(
@@ -51,13 +47,6 @@ public class AuthController {
         );
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        
-        // MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();    
-        // List<String> roles = userDetails.getAuthorities().stream()
-        //     .map(item -> item.getAuthority())
-        //     .collect(Collectors.toList());
-
-        // return ResponseEntity.ok(roles);
         return "Ok";
     }
 }

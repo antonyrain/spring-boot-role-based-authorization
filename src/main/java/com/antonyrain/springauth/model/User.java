@@ -1,4 +1,4 @@
-package com.antonyrain.springauth.domain;
+package com.antonyrain.springauth.model;
 
 import java.util.ArrayList;
 import java.util.List;
